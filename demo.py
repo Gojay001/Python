@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
 # 输入输出
 #age = input('enter your age:')
 #print('age is:', age)
@@ -12,7 +16,6 @@
 #line3''')
 #print('9/3=',9/3)
 #print('10//3=', 10//3)
-
 
 
 """
@@ -77,3 +80,38 @@ print('python' in books) #key是否存在
 print(books.get('js', -1)) #key不存在返回-1
 print(books.get('asp', -1))
 books.pop('asp')
+
+
+# dictionary(key-value)
+d = {'java': 100, 'python': 150, 'js': 120}
+# 检查key是否存在
+if 'java' in d:
+	print(d['java'])
+print(d.get('test', -1))
+# 增加、删除
+d['php'] = 130
+d.pop('js')
+print(d)
+#key只能是不可变对象
+key = [1, 2, 3]
+# d[key] = 'a list'
+
+# set(不能重复)
+s = set([1, 2, 3, 1, 3])
+print s
+s1 = set([1, 2, 3])
+s1.add(4)
+s1.remove(2)
+print(s1, s1 & s, s1 | s)
+s2 = ['a', 'c', 'b']
+s2.sort()
+s2.pop(2)
+del s2[1]
+print(s2)
+
+# Fibonacci series: 斐波纳契数列
+# 两个元素的总和确定了下一个数
+a, b = 0, 1
+while b < 1000:
+    print(b)
+    a, b = b, a + b

@@ -37,7 +37,7 @@ for x in range(101):
 	sum += x
 print(sum)
 
-#while
+# while
 sum = 0
 n = 99
 while n > 0:
@@ -98,7 +98,7 @@ key = [1, 2, 3]
 
 # set(不能重复)
 s = set([1, 2, 3, 1, 3])
-print s
+print(s)
 s1 = set([1, 2, 3])
 s1.add(4)
 s1.remove(2)
@@ -113,5 +113,5 @@ print(s2)
 # 两个元素的总和确定了下一个数
 a, b = 0, 1
 while b < 1000:
-    print(b)
+    print(b, end = " ")
     a, b = b, a + b

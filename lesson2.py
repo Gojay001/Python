@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # 判断年份是否闰年
-def isYear(year):
+def is_year(year):
 	if year % 4 == 0 and year % 100 != 0:
 		print("%d年是闰年" % year)
 	elif year % 400 == 0:
@@ -11,29 +11,29 @@ def isYear(year):
 		print("%d年不是闰年" % year)
 	return
 #year = int(input("输入年份:"))
-#isYear(year)
+#is_year(year)
 
 # 计算1-100奇数和
-def addOdds(num):
+def add_odds(num):
 	sum = 0
 	for x in range(num):
 		if x % 2 != 0:
 			sum += x
 	print(sum)
 	return
-#addOdds(100)
+#add_odds(100)
 
 # 计算1-100之和
-def addNum(num):
+def add_num(num):
 	sum = 0
 	for x in range(num):
 		sum += x
 	print(sum)
 	return
-#addNum(101)
+#add_num(101)
 
 # 判断是否质数
-def isPrime(num):
+def is_prime(num):
 	if num < 1:
 		print("输入格式有误")
 		return
@@ -49,11 +49,11 @@ def isPrime(num):
 	if flag != 0:
 		print("%d是质数" % num)
 	return
-#isPrime(199)
+#is_prime(199)
 '''
 num = int(input("enter number:"))
 while num != 0:
-	isPrime(num)
+	is_prime(num)
 	num = int(input("enter number:"))
 '''
 
@@ -67,7 +67,7 @@ for num in L1:
 print("3的个数:", count)
 
 # 计算球体体积
-def culVolume(radius, PI = 3.14):
+def cul_volume(radius, PI = 3.14):
 	return 3.0/4 * PI * pow(radius, 3)
 print("体积为:", culVolume(4))
 
@@ -90,10 +90,10 @@ def fab(max):
         # print b 
         a, b = b, a + b 
         n = n + 1
-for x in fab(6): 
+for x in fab(5): 
     print(x, end = ' ')
 
 # 全部字符大写
 print()
 L = ['abc', 'AbC', 'eFG']
-print("列表转大写:", [x.upper() for x in L])
+print("列表转大写", [x.upper() for x in L])

@@ -25,7 +25,8 @@ def movefile(sourcedir, destdir):
 			shutil.copyfile(os.path.join(sourcedir, x), os.path.join(destdir, x))
 			print('成功移动:', x)
 
-sourcedir = '/Users/gojay/test'
-destdir = '/Users/gojay/test1'
-createdir(sourcedir)
-#movefile(sourcedir, destdir)
+if __name__ == '__main__':
+	sourcedir = '/Users/gojay/test'
+	destdir = '/Users/gojay/test1'
+	createdir(sourcedir)
+	movefile(sourcedir, destdir)

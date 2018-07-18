@@ -74,7 +74,8 @@ class ComputerScienceCollege(University):
 		def set_population(self, population):
 			self.__population = population
 
-#ComputerScienceCollege.IS(120).teach()
-college = ComputerScienceCollege()
-profession = college.IS(120)
-profession.teach()
+if __name__ == '__main__':
+	#ComputerScienceCollege.IS(120).teach()
+	college = ComputerScienceCollege()
+	profession = college.IS(120)
+	profession.teach()

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # file_test.py
+
+__author__ = 'gojay'
 
 import os
 import shutil
@@ -28,5 +31,5 @@ def movefile(sourcedir, destdir):
 if __name__ == '__main__':
 	sourcedir = '/Users/gojay/test'
 	destdir = '/Users/gojay/test1'
-	createdir(sourcedir)
+	#createdir(sourcedir)
 	movefile(sourcedir, destdir)

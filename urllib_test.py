@@ -27,6 +27,12 @@ def imitate(url):
 	print('Data:', data.decode('utf-8'))
 #imitate('http://www.douban.com/')
 
+def printinfo(url):
+	from urllib.request import urlopen
+	html = urlopen(url).read().decode('utf-8')
+	print(html)
+printinfo('https://morvanzhou.github.io/static/scraping/basic-structure.html')
+
 # Post
 ## 如果要以POST发送一个请求，只需要把参数data以bytes形式传入
 

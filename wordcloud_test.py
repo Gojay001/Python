@@ -51,7 +51,7 @@ back_coloring = imread(path.join(d, "/Users/gojay/Downloads/china_map.png"))
 wc = WordCloud(font_path="/Users/gojay/Downloads/msyh.ttf",  # 设置字体
                background_color="white",  # 背景颜色
                max_words=2000,  # 词云显示的最大词数
-               mask=back_coloring,  # 设置背景图片
+               #mask=back_coloring,  # 设置背景图片
                max_font_size=200,  # 字体最大值
                random_state=42,  # 设置有多少种随机生成状态，即有多少种配色方案
                )
@@ -60,7 +60,7 @@ wc.generate(text)
 # wc.generate_from_frequencies(txt_freq)
 # txt_freq例子为[('词a', 100),('词b', 90),('词c', 80)]
 # 从背景图片生成颜色值
-image_colors = ImageColorGenerator(back_coloring)
+# image_colors = ImageColorGenerator(back_coloring)
 # 绘制词云
 plt.figure()
 # 以下代码显示图片
@@ -69,4 +69,4 @@ plt.axis("off")
 plt.show()
 
 # 保存图片
-wc.to_file(path.join(d, "file1/show.png"))
+wc.to_file(path.join(d, "file1/show1.png"))

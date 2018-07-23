@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# beautifulsoup.py
+# beautifulsoup_test.py
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen

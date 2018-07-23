@@ -74,7 +74,7 @@ class JDCommentsCrawler:
         return json.loads(return_str)
     def save_csv(self,df,p):
         # 保存文件
-        df.to_csv(path_or_buf = 'file/jd_%d.csv'%p,encoding='gbk') 
+        df.to_csv(path_or_buf = 'file1/jd_%d.csv'%p,encoding='gbk') 
  
     def crawler(self):
         # 把抓取的数据存入CSV文件，设置时间间隔，以免被屏蔽
@@ -82,16 +82,20 @@ class JDCommentsCrawler:
         for p in range(0, self.page):
             json_info = self.showListPage(p)
             tmp_list = []
+            tmp_list1 = []
             #print(json_info)
             productCommentSummary = json_info['productCommentSummary']
             productId = productCommentSummary['productId']
             comments = json_info['comments']
             for com in comments:
-                tmp_list.append([com['id'],productId,com['guid'],com['content'],com['creationTime'],com['referenceId'],com['referenceTime'],com['score'],\
+            	# 获取评论
+                tmp_list.append([com['id'],com['content']])
+                # 获取商品全部信息
+                tmp_list1.append([com['id'],productId,com['guid'],com['content'],com['creationTime'],com['referenceId'],com['referenceTime'],com['score'],\
                                  com['nickname'],com['userLevelName'],com['isMobile'],com['userClientShow']])
-            df = pd.DataFrame(tmp_list,columns=['comment_id','product_id','guid','content','create_time','reference_id','reference_time','score',\
-                                                'nickname','user_level','is_mobile','user_client'])
-            
+            df = pd.DataFrame(tmp_list,columns=['comment_id','content'])
+#            df1 = pd.DataFrame(tmp_list1,columns=['comment_id','product_id','guid','content','create_time','reference_id','reference_time','score',\
+#                                                'nickname','user_level','is_mobile','user_client'])	
             dfs.append(df)
             if p % 10 == 0:
             	temp_df = pd.concat(dfs,ignore_index=True)

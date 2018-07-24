@@ -9,6 +9,7 @@ from urllib.parse import urlencode, quote
 import json
 from bs4 import BeautifulSoup
 import time
+import random
 
 header = {
     'Connection': 'Keep-Alive',
@@ -26,8 +27,8 @@ result = response.read().decode('utf-8')
 # 加载json为字典
 result = json.loads(result)
 tags = result['tags']
-print(tags)
-tags = tags[0:3]
+print(tags[0])
+tags = tags[0]
 
 # 定义一个列表存储电影的基本信息
 movies = []
@@ -62,6 +63,7 @@ for tag in tags:
         # 使用循环记得修改条件
         # 这里需要修改start
         start += 20
+        time.sleep(random.randint(3, 10))
 
 # 看看一共获取了多少电影
 print(len(movies))
@@ -71,7 +73,8 @@ print(len(movies))
 for x in range(0, len(movies)):
     url = movies[x]['url']
     req = request.Request(url, headers=header)
-    response = request.urlopen(req, timeout=20)
+    re
+    、sponse = request.urlopen(req, timeout=20)
     result = response.read().decode('utf-8')
 
     # 使用BeautifulSoup解析html
@@ -91,9 +94,9 @@ for x in range(0, len(movies)):
         print(len(movies))
 
     # 适当休息，避免请求频发被禁止，报403 Forbidden错误
-    time.sleep(0.5)
+    time.sleep(random.randint(3, 10))
 
-fw = open('file/douban_movies.txt', 'w')
+fw = open('file/douban_movies.txt', 'w', encoding='utf-8')
 # 写入一行表头，用于说明每个字段的意义
 fw.write('title^rate^url^cover^id^description\n')
 for item in movies:

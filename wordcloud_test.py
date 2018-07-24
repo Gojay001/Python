@@ -40,7 +40,7 @@ importStopword(filename='file1/stopwords.txt')
 # d = path.dirname('.')
 d = path.dirname(__file__)
 
-text = open(path.join(d, 'file1/jd_100.csv'), encoding='gbk').read()
+text = open(path.join(d, 'file1/jdmish_100.csv'), encoding='gbk').read()
 
 # 如果是中文
 text = processChinese(text)  # 中文不好分词，使用Jieba分词进行
@@ -69,4 +69,4 @@ plt.axis("off")
 plt.show()
 
 # 保存图片
-wc.to_file(path.join(d, "file1/show1.png"))
+wc.to_file(path.join(d, "file1/shouhuan.png"))

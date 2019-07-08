@@ -13,7 +13,7 @@ def printinfo(url):
 			print('%s: %s' % (k, v))
 		data = f.read()
 		print('Data:', data.decode('utf-8'))
-#printinfo('https://api.douban.com/v2/book/2129650')
+# printinfo('https://api.douban.com/v2/book/2129650')
 
 ## 使用Request对象把请求伪装成浏览器:
 def imitate(url):
@@ -25,7 +25,7 @@ def imitate(url):
 		for k, v in f.getheaders():
 			print('%s: %s' % (k, v))
 	print('Data:', data.decode('utf-8'))
-#imitate('http://www.douban.com/')
+# imitate('http://www.douban.com/')
 
 ## 发送get请求
 def getinfo(url):
@@ -44,9 +44,9 @@ res1 = re.findall(r'<title>(.+?)</title>', html)
 res2 = re.findall(r'<p>(.*?)</p>', html, flags=re.DOTALL)
 ### 获取所有链接
 res3 = re.findall(r'href="(.*?)"', html)
-print('\nPage title is: ', res1[0])
-print('\nPage paragraph is:	 ', res2[0])
-print('\nAll links: ', res3)
+# print('\nPage title is: ', res1[0])
+# print('\nPage paragraph is:	 ', res2[0])
+# print('\nAll links: ', res3)
 
 # Post
 ## 如果要以POST发送一个请求，只需要把参数data以bytes形式传入

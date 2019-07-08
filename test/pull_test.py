@@ -10,5 +10,5 @@ def getHtmlText(url):
 		return "Exception!"
 
 if __name__ == "__main__":
-	url = "http://www.baidu.com"
+	url = "https://www.baidu.com"
 	print(getHtmlText(url))
